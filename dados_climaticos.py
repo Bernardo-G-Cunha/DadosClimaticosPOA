@@ -69,7 +69,7 @@ def testeData(data):
       return False
 
 
-
+"""
 def acumularDados(listaComDados, dadoRequerido, listaSendoCriada):
   #Acumula os dados requisitados para fazer a média posteriormente.
 
@@ -83,6 +83,7 @@ def acumularDados(listaComDados, dadoRequerido, listaSendoCriada):
     listaSendoCriada[chaveAnoMes] = round(listaSendoCriada[chaveAnoMes], 1)
 
   return listaSendoCriada
+"""
 
 def acumularDados(listaComDados, dadoRequerido, listaSendoCriada):
   #Acumula os dados requisitados para fazer a média posteriormente.
@@ -141,6 +142,7 @@ dataInicioObj = datetime.strptime(dataInicio, "%m/%Y")
 dataFimObj = datetime.strptime(str(calendar.monthrange(int(dataFim[3:7]), int(dataFim[0:2]))[1]) + "/" + dataFim, "%d/%m/%Y")
 
 if dataInicioObj > dataFimObj:
+  print("Data final é anterior a data de início. As datas foram invertidas automaticamente.")
   aux = dataInicio
   dataInicio = dataFim
   dataFim = aux
@@ -247,10 +249,8 @@ for chave, dado in listaDados.items():
 """
 
 for chave, dado in listaDados.items():
-  #print(f"Chave: {chave}, dado: {dado}")
-  #print("|", (chave) >= dataInicioObj.date(), "/", (chave) <= dataFimObj.date(), "|", end=" ")
+  
   if (chave) >= dataInicioObj.date()  and (chave) <= dataFimObj.date():
-    #print(dadoEscolhido)
     if dadoEscolhido == 1:
       print(f"{str(chave.day)}/{str(chave.month)}/{str(chave.year)} - Precipitação: {dado['precipitacao']} mm/m^2, Temperatura Máxima: {dado['temperatura maxima']} Cº, Temperatura Mínima: {dado['temperatura minima']} Cº")
       print(f"Umidade Relativa: {dado['umidade']} %, Velocidade do Vento: {dado['velocidade do vento']} m/s")
@@ -351,7 +351,11 @@ for mes, somaTemps in listaTempMinima.items():
 for mes, somaTemps in listaTempMinima.items():
   if mesTempMed == mes.month and mes.year >= 2006 and mes.year <= 2016:
     tempMed = somaTemps/(calendar.monthrange(mes.year, mes.month)[1])
-    print(f"{str(mes.month) + '/' + str(mes.year)}: {round(tempMed, 2)} Cº\n")
+    if mes.month < 10:
+      print(f"0{str(mes.month) + '/' + str(mes.year)}: {round(tempMed, 2)} Cº\n")
+    else:   
+      print(f"{str(mes.month) + '/' + str(mes.year)}: {round(tempMed, 2)} Cº\n")
+    
     listaMedTempMinima.append(tempMed)
     listaMedTempMinimaAnos.append(str(mes.year))
     
