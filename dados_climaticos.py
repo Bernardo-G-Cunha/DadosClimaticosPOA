@@ -3,7 +3,7 @@
 from datetime import datetime
 import calendar
 
-listaDados = {}
+dicionarioDados = {}
 
 try:
   with open("Anexo_Arquivo_Dados_Projeto_Logica_e_programacao_de_computadores.csv") as csv:
@@ -13,7 +13,7 @@ try:
       data = datetime.strptime(dados[0], "%d/%m/%Y")
       novo = {"data" : data, "precipitacao" : dados[1],  "temperatura maxima": dados[2] , "temperatura minima" : dados[3],
               "umidade": dados[6] , "velocidade do vento" : dados[7] }
-      listaDados[data.date()] = novo
+      dicionarioDados[data.date()] = novo
 
 except FileNotFoundError as File:
   raise Exception(f"O arquivo não foi encontrado: {File}")
@@ -64,18 +64,18 @@ def testeDadoEscolhido(dado):
 
 #----------------
 
-def acumularDados(listaComDados, dadoRequerido, listaSendoCriada):
-  #Acumula os dados requisitados para fazer a média posteriormente.
+def acumularDados(dicionarioComDados, dadoRequerido, dicionarioSendoCriado):
+  #Acumula os dados requisitados em um dicionários.
 
-  for chave, dado in listaComDados.items():
+  for chave, dado in dicionarioComDados.items():
     chaveAnoMes = datetime(chave.year, chave.month, 1)
-    if (chaveAnoMes) not in listaSendoCriada:
-      listaSendoCriada[chaveAnoMes] =  0
+    if (chaveAnoMes) not in dicionarioSendoCriado:
+      dicionarioSendoCriado[chaveAnoMes] =  0
 
-    listaSendoCriada[chaveAnoMes] += float(dado[dadoRequerido])
-    listaSendoCriada[chaveAnoMes] = round(listaSendoCriada[chaveAnoMes], 1)
+    dicionarioSendoCriado[chaveAnoMes] += float(dado[dadoRequerido])
+    dicionarioSendoCriado[chaveAnoMes] = round(dicionarioSendoCriado[chaveAnoMes], 1)
 
-  return listaSendoCriada
+  return dicionarioSendoCriado
 
 #----------------
 
@@ -123,7 +123,7 @@ if dataInicioObj > dataFimObj:
   dataInicio = dataFim
   dataFim = aux
   dataInicioObj = datetime.strptime(dataInicio, "%m/%Y")
-  dataFimObj = datetime.strptime(dataFim, "%m/%Y")
+  dataFimObj = datetime.strptime(str(calendar.monthrange(int(dataFim[3:7]), int(dataFim[0:2]))[1]) + "/" + dataFim, "%d/%m/%Y")
 
 
 #____________________________________Escolher Dados____________________________________
@@ -154,7 +154,7 @@ else:
 
 #________________________________Apresentação em Modo Texto________________________________
 
-for chave, dado in listaDados.items():
+for chave, dado in dicionarioDados.items():
   
   if (chave) >= dataInicioObj.date()  and (chave) <= dataFimObj.date():
     if dadoEscolhido == 1:
@@ -177,11 +177,11 @@ for chave, dado in listaDados.items():
 
 #________________________________Mês Mais Chuvoso________________________________
 
-listaDiasChuvosos = {}
+dicionarioDiasChuvosos = {}
 
-listaDiasChuvosos = acumularDados(listaDados, "precipitacao", listaDiasChuvosos)
+dicionarioDiasChuvosos = acumularDados(dicionarioDados, "precipitacao", dicionarioDiasChuvosos)
 
-for chave, valor in sorted(listaDiasChuvosos.items(), key=lambda x:x[1], reverse=True):
+for chave, valor in sorted(dicionarioDiasChuvosos.items(), key=lambda x:x[1], reverse=True):
   if chave.month < 10:
     chaveStr = "0" + str(chave.month) + "/" + str(chave.year)
   else:   
@@ -206,9 +206,9 @@ mesTempMed = int(mesTempMed)
 
 #_____________________________Apresentação da Média Temperatura da Mínima do Mês_____________________________
 
-listaTempMinima = {}
+dicionarioTempMinima = {}
 
-listaTempMinima = acumularDados(listaDados, "temperatura minima", listaTempMinima)
+dicionarioTempMinima = acumularDados(dicionarioDados, "temperatura minima", dicionarioTempMinima)
 
 listaMedTempMinima = []
 listaMedTempMinimaAnos = []
@@ -216,7 +216,7 @@ listaMedTempMinimaAnos = []
 print("\nTemperatura Mínima Média:")
 print("(Obs: alguns meses possuem dados apenas até 2015.)\n")
 
-for mes, somaTemps in listaTempMinima.items():
+for mes, somaTemps in dicionarioTempMinima.items():
   if mesTempMed == mes.month and mes.year >= 2006 and mes.year <= 2016:
     tempMed = somaTemps/(calendar.monthrange(mes.year, mes.month)[1])
     if mes.month < 10:
