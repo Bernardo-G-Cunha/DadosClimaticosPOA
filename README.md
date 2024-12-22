@@ -4,7 +4,7 @@ Análise de dados meteorológicos de Porto Alegre (1961 - 2016) usando Python, i
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Bernardo-G-Cunha/DadosClimaticosPOA/blob/main/LICENSE) 
 
 # Sobre o projeto
-Essa é um projeto criado durante meu primeiro trimestre na faculdade, tratando-se de um programa que mostra estatísticas dos dados climáticos de Porto Alegre, RS, entre janeiro de 1961 e junho de 2016. Os dados computados são precipitação, temperaturas máxima e mínima, umidade relativa e velocidade do vento, retirados do arquivo "Anexo_Arquivo_Dados_Projeto_Logica_e_programacao_de_computadores.csv".
+Esse é um projeto criado durante meu primeiro trimestre na faculdade, tratando-se de um programa que mostra estatísticas dos dados climáticos de Porto Alegre, RS, entre janeiro de 1961 e junho de 2016. Os dados computados são precipitação, temperaturas máxima e mínima, umidade relativa e velocidade do vento, retirados do arquivo "Anexo_Arquivo_Dados_Projeto_Logica_e_programacao_de_computadores.csv".
 
 O programa permite o usuário escolher o período do qual quer ver os dados e que dados quer ver, sendo eles então apresentados. Além disso, apresenta o mês mais chuvoso de todo período do arquivo com a respectiva quantidade de chuva e um gráfico da temperatura mínima média de um mês escolhido pelo usuário (de 2006 a 2016).
 
