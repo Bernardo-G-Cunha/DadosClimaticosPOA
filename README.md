@@ -12,21 +12,23 @@ O programa permite o usuário escolher o período do qual quer ver os dados e qu
 
 # Tecnologias utilizadas
 - Python
-  -- Bibliotecas `datetime`, `calendar` e `matplotlib`
+  -- Bibliotecas `datetime`, `calendar`, `matplotlib` e `numpy`.
 
 # Como executar o projeto
 
 ## Pré-requisitos
-- Python 3 -- `matplotlib`
+- Python 3 -- `matplotlib`, `numpy`.
 
-Será necessário instalar o matplotlib, caso não o tenha.
+Será necessário instalar o matplotlib e o numpy, caso não os tenha. Segundo os respectivos sites, esta é a forma de instalar:
 
 ```bash
 python -m pip install -U pip
 python -m pip install -U matplotlib
+
+pip install numpy
 ```
 
-Caso a instalação não funcione, você pode encontrar mais informações no site do matplotlib https://matplotlib.org/stable/install/index.html.
+Caso a instalação não funcione, você pode encontrar mais informações no site do matplotlib (https://matplotlib.org/stable/install/index.html) e do numpy (https://numpy.org/install/).
 
 ## Executando
 ```bash
@@ -44,6 +46,6 @@ py dados_climaticos.py
 ```
 # Autor
 
-Bernardo Garcia Cunha
+Bernardo Garcia Cunha.
 
 https://www.linkedin.com/in/bernardo-gcunha
