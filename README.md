@@ -12,23 +12,21 @@ O programa permite o usuário escolher o período do qual quer ver os dados e qu
 
 # Tecnologias utilizadas
 - Python
-  -- Bibliotecas `datetime`, `calendar`, `matplotlib` e `numpy`.
+  -- Bibliotecas `datetime`, `calendar` e `matplotlib`.
 
 # Como executar o projeto
 
 ## Pré-requisitos
-- Python 3 -- `matplotlib`, `numpy`.
+- Python 3 -- `matplotlib`.
 
-Será necessário instalar o matplotlib e o numpy, caso não os tenha. Segundo os respectivos sites, esta é a forma de instalar:
+Será necessário instalar o matplotlib, caso não o tenha. Segundo o site, esta é a forma de instalar:
 
 ```bash
 python -m pip install -U pip
 python -m pip install -U matplotlib
-
-pip install numpy
 ```
 
-Caso a instalação não funcione, você pode encontrar mais informações no site do matplotlib (https://matplotlib.org/stable/install/index.html) e do numpy (https://numpy.org/install/).
+Caso a instalação não funcione, você pode encontrar mais informações no site do matplotlib (https://matplotlib.org/stable/install/index.html).
 
 ## Executando
 ```bash
