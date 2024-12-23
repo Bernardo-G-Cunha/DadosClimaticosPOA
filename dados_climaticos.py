@@ -263,7 +263,6 @@ print(f"A média geral da temperatura mínima de {nomeMesTempMed} no período é
 #____________________________Gráfico de Temperaturas Mínimas Médias____________________________
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 plt.figure(figsize=(12, 4))
 plt.xticks(rotation=30, ha ="right")
@@ -271,7 +270,7 @@ plt.bar(listaMedTempMinimaAnos, listaMedTempMinima)
 plt.xlabel("Ano")
 plt.ylabel("Temperatura Mínima Média (Cº)")
 plt.ylim(0, 20)
-plt.yticks(np.arange(0, 21, 2))
+plt.yticks([x for x in range(0, 21, 2)])
 
 for i, v in enumerate(listaMedTempMinima):
   plt.text(i, v+0.5, str(round(v, 2)), ha="center", fontsize=9)
