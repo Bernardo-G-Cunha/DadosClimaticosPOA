@@ -1,0 +1,62 @@
+
+
+
+/* __________________ Body __________________ */
+
+h1, h2, h3, h4 {
+    color:cornflowerblue;
+    -webkit-text-stroke: 0.2px rgb(75, 73, 73);
+    margin: 0;
+    line-height: 1.5;
+}
+
+section {
+    padding-left: 5px;
+}
+
+/* __________________ Header __________________ */
+header h1 {
+    padding-left: 5px;
+}
+/* __________________ /Header/ __________________ */
+/* __________________ Main __________________ */
+main p {
+    padding-bottom: 8px;
+}
+
+.datas {
+    color:cornflowerblue;
+    -webkit-text-stroke: 0.2px rgb(75, 73, 73);
+}
+
+.secaoDatas {
+    border: 2px solid cornflowerblue;
+    padding-bottom: 8px;
+}
+
+#secaoDataInicio {
+    border-bottom: 0px solid white;
+    /* padding-bottom: 10px; */
+}
+#secaoDataFim {
+    border-bottom: 0px solid white;
+}
+/* __________________ /Main/ __________________ */
+/* __________________ Footer __________________*/
+
+footer {
+    border: 2px solid cornflowerblue;
+    padding-bottom: 8px;
+}
+
+footer h4 {
+    margin: 0;
+    line-height: 1.9;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.2;    
+}
+/* __________________ /Footer/ __________________*/
+/* __________________ /Body/ __________________*/
