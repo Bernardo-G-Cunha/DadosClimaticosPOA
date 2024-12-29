@@ -17,11 +17,23 @@ section {
 /* __________________ Header __________________ */
 header h1 {
     padding-left: 5px;
+    border-top: 2px solid cornflowerblue;
+    border-left: 2px solid cornflowerblue;
+    border-right: 2px solid cornflowerblue;
 }
 /* __________________ /Header/ __________________ */
 /* __________________ Main __________________ */
 main p {
     padding-bottom: 8px;
+}
+
+#sobre{
+    border: 2px solid cornflowerblue;
+}
+
+#sobre p {
+    margin: 0;
+    line-height: 1.4;
 }
 
 .datas {
@@ -30,17 +42,26 @@ main p {
 }
 
 .secaoDatas {
-    border: 2px solid cornflowerblue;
+    border-right: 2px solid cornflowerblue;
+    border-left: 2px solid cornflowerblue;    
     padding-bottom: 8px;
 }
 
 #secaoDataInicio {
     border-bottom: 0px solid white;
+    border-top: 0px solid white;
     /* padding-bottom: 10px; */
 }
+
 #secaoDataFim {
     border-bottom: 0px solid white;
 }
+
+#mesTempMedia{
+    border-bottom: 0px solid white;
+}
+
+
 /* __________________ /Main/ __________________ */
 /* __________________ Footer __________________*/
 

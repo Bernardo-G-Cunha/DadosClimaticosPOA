@@ -8,8 +8,6 @@
     </head> 
 
     <body>
-        <hr>
-
         <header>
             <h1>Dados Climáticos de Porto Alegre, RS</h1>
         </header>
@@ -20,11 +18,16 @@
                     tratando-se de um programa que mostra estatísticas dos dados meteorológicos de Porto Alegre, 
                     RS, entre janeiro de 1961 e junho de 2016.
                 </p>
+                <p>
+                    Digite datas no formtato 
+                    mm/aaaa (exemplo: 02/1980) dentro do range de datas citado. Após isso, escolha
+                    o mês que gostaria de ver a temperatura média entre 2006 e 2016.
+                </p>
             </section>
             <section class="secaoDatas" id="secaoDataInicio">
                 <h3 class="datas" >Digite a data de início dos dados</h3>
                 
-                <input type="date" placeholder="mm/aaaa" id = "dataInicio">
+                <input placeholder="mm/aaaa" id = "dataInicio">
         
             </section>
             <section class="secaoDatas" id="secaoDataFim">
@@ -32,6 +35,24 @@
                 
                 <input placeholder="mm/aaaa" id = "dataFim">
                 
+            </section>
+            <section class="secaoDatas" id="mesTempMedia">
+                <h3>Mês da temperatura média</h3>
+                <input type="checkbox">1
+                <input type="checkbox">2
+                <input type="checkbox">3
+                <input type="checkbox">4
+                <input type="checkbox">5
+                <input type="checkbox">6
+                <input type="checkbox">7
+                <input type="checkbox">8
+                <input type="checkbox">9
+                <input type="checkbox">10
+                <input type="checkbox">11
+                <input type="checkbox" id="checkbox12">12
+            </section>
+            <section class="secaoDatas" id="secaoSubmitDatas">    
+                <input type="submit" id="botaoSubmit"> Enviar datas
             </section>
         </main>
         <footer>
