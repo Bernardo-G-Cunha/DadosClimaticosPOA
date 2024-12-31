@@ -23,17 +23,19 @@ header h1 {
 }
 /* __________________ /Header/ __________________ */
 /* __________________ Main __________________ */
-main p {
-    padding-bottom: 8px;
-}
 
-#sobre{
+main{
     border: 2px solid cornflowerblue;
 }
 
-#sobre p {
+main p {
+    padding-bottom: 2px;
+}
+
+#sobre {
     margin: 0;
-    line-height: 1.4;
+    line-height: 0.5;
+    border-bottom: 2px solid cornflowerblue;
 }
 
 .datas {
@@ -41,24 +43,12 @@ main p {
     -webkit-text-stroke: 0.2px rgb(75, 73, 73);
 }
 
-.secaoDatas {
-    border-right: 2px solid cornflowerblue;
-    border-left: 2px solid cornflowerblue;    
+.secaoDatas {        
     padding-bottom: 8px;
 }
 
-#secaoDataInicio {
-    border-bottom: 0px solid white;
-    border-top: 0px solid white;
-    /* padding-bottom: 10px; */
-}
-
-#secaoDataFim {
-    border-bottom: 0px solid white;
-}
-
-#mesTempMedia{
-    border-bottom: 0px solid white;
+#sectionDados{
+    border-top: 2px solid cornflowerblue;
 }
 
 
@@ -66,7 +56,9 @@ main p {
 /* __________________ Footer __________________*/
 
 footer {
-    border: 2px solid cornflowerblue;
+    border-left: 2px solid cornflowerblue;
+    border-right: 2px solid cornflowerblue;
+    border-bottom: 2px solid cornflowerblue;
     padding-bottom: 8px;
 }
 
