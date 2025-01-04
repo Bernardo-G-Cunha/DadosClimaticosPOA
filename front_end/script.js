@@ -40,7 +40,6 @@ function pegarValorInput() {
     }
 
     console.log(`Data Inicio: ${dataInicio}; Data Fim: ${dataFim}`);
-    alert(`Data Inicio: ${dataInicio}; Data Fim: ${dataFim}, Mes Temp Média: ${mesTempMed}`);
 }
 
 
