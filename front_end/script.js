@@ -21,7 +21,6 @@ function pegarValorInput() {
         console.log(`Apagado: ${document.querySelector('#secaoDados')}`);
     };
     
-
     var main = document.querySelector("main");
     var secaoDados = document.createElement('section');
     secaoDados.id = "secaoDados";    
