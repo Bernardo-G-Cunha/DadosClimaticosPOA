@@ -12,6 +12,7 @@ h1, h2, h3, h4 {
 
 section {
     padding-left: 5px;
+    
 }
 
 /* __________________ Header __________________ */
@@ -47,7 +48,7 @@ main p {
     padding-bottom: 8px;
 }
 
-#sectionDados{
+#secaoDados{
     border-top: 2px solid cornflowerblue;
 }
 
