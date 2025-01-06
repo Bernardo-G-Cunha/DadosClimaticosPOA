@@ -52,6 +52,15 @@ main p {
     border-top: 2px solid cornflowerblue;
 }
 
+.underlineAtivo {
+    text-decoration: underline;
+    text-decoration-color: rgb(59, 214, 162);
+}
+/* 
+.contatoInativo {
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 5, 3);
+} */
 
 /* __________________ /Main/ __________________ */
 /* __________________ Footer __________________*/
@@ -63,7 +72,8 @@ footer {
     padding-bottom: 8px;
 }
 
-footer h4 {
+footer h3 {
+    width: 65px;
     margin: 0;
     line-height: 1.9;
 }
