@@ -61,6 +61,19 @@ function verificarCampos() {
     }
 }
 
+function underlineAtivar(elemento){
+    elemento.classList.replace('underlineInativo', 'underlineAtivo');
+
+    // Adiciona o event listener para tirar o underline
+    elemento.addEventListener('mouseleave', () => {underlineInativar(elemento)});
+};
+
+function underlineInativar(elemento){
+    elemento.classList.replace('underlineAtivo', 'underlineInativo');
+
+};
+
+
 //-------------------------------------------------------------------------------------------
 
 // Adiciona um ouvinte de evento para o clique do botão
@@ -71,3 +84,14 @@ const elementosUnderline = document.querySelectorAll('.underlineInativo');
 elementosUnderline.forEach(elemento => {
     elemento.addEventListener('mouseenter', () => underlineAtivar(elemento));
 });
+
+
+// Libera o botão submit se os campos estiverem corretos.
+document.querySelector('#dataInicio').addEventListener('input', verificarCampos);
+document.querySelector('#dataFim').addEventListener('input', verificarCampos);
+const radioButtons = document.querySelectorAll('input[name="opcao"]');
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', verificarCampos); //cria o mesmo event listener para todo radio, como se adicionasse um por um.
+});
+
+verificarCampos();
