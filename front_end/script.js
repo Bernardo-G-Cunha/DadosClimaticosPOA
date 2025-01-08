@@ -59,6 +59,8 @@ function verificarCampos() {
     const formatoDataValido = formatoInicio && formatoFim;
 
     if (formatoDataValido && radioButtons.length > 0) {
+        
+        // Coloca os meses e anos em varáveis para melhorar legibilidade
         const mesInicio = dataInicio.match(/^(\d{2})\/(\d{4})$/)[1];
         const anoInicio = dataInicio.match(/^(\d{2})\/(\d{4})$/)[2];
         const mesFim = dataFim.match(/^(\d{2})\/(\d{4})$/)[1];
@@ -82,6 +84,9 @@ function verificarCampos() {
 
             botaoSubmit.disabled = true;
         } else {
+            if(document.querySelector('#avisoData')) {
+                document.querySelector('#avisoData').remove();
+            };
             botaoSubmit.disabled = false;
         };
         

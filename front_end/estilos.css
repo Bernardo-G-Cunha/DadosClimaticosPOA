@@ -31,7 +31,8 @@ main{
 
 main p {
     padding-bottom: 2px;
-    /*font-family: "Arial", sans-serif;*/
+    font-family: "Arial", sans-serif;
+    font-size: 0.85rem;
 }
 
 #sobre {
@@ -47,6 +48,11 @@ main p {
 
 .secaoDatas {        
     padding-bottom: 8px;
+}
+
+#botaoSubmit {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
 }
 
 #secaoDados{
