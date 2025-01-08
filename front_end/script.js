@@ -52,14 +52,50 @@ function verificarCampos() {
     const radioButtons = document.querySelectorAll('input[name="opcao"]:checked');
     const botaoSubmit = document.querySelector('#botaoSubmit');
 
-    const formatoDataValido = /^\d{2}\/\d{4}$/.test(dataInicio) && /^\d{2}\/\d{4}$/.test(dataFim);
+
+    const formatoInicio = /^(\d{2})\/(\d{4})$/.test(dataInicio);
+    const formatoFim = /^(\d{2})\/(\d{4})$/.test(dataFim);
+
+    const formatoDataValido = formatoInicio && formatoFim;
 
     if (formatoDataValido && radioButtons.length > 0) {
-        botaoSubmit.disabled = false;
+        const mesInicio = dataInicio.match(/^(\d{2})\/(\d{4})$/)[1];
+        const anoInicio = dataInicio.match(/^(\d{2})\/(\d{4})$/)[2];
+        const mesFim = dataFim.match(/^(\d{2})\/(\d{4})$/)[1];
+        const anoFim = dataFim.match(/^(\d{2})\/(\d{4})$/)[2];
+        
+        // Testa se as datas estão no período válido.
+        const testeMes = Number(mesInicio) > 12 || Number(mesInicio) < 1 || Number(mesFim) > 12 || Number(mesFim) < 1;
+        const testeAno = Number(anoInicio) > 2016 || Number(anoInicio) < 1961 || Number(anoFim) > 2016 || Number(anoFim) < 1961;
+        
+        // O ano de 2016 vai apenas até o mês 06, então é necessário testar isso.
+        const teste2016 = (Number(anoInicio) == 2016 && Number(mesInicio) > 6) || (Number(anoFim) == 2016 && Number(mesFim) > 6);
+
+        if (testeMes || testeAno || teste2016) {
+            
+            if(!(document.querySelector('#avisoData'))){
+                const avisoData = document.createElement('p');
+                avisoData.id = 'avisoData';
+                avisoData.textContent = `As datas devem estar entre 01/1961 e 06/2016.`;
+                document.querySelector('#secaoSubmitDatas').appendChild(avisoData);
+            };
+
+            botaoSubmit.disabled = true;
+        } else {
+            botaoSubmit.disabled = false;
+        };
+        
     } else {
+        
+        if(document.querySelector('#avisoData')) {
+            document.querySelector('#avisoData').remove();
+        };
+
         botaoSubmit.disabled = true;
     }
 }
+
+//____________________ Fuções para alterar underline ____________________
 
 function underlineAtivar(elemento){
     elemento.classList.replace('underlineInativo', 'underlineAtivo');
