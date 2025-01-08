@@ -3,45 +3,55 @@
 //_________________ Pega valor dos Inputs _________________
 
 function pegarValorInput() {
-    const dataInicio = document.querySelector("#dataInicio").value.trim();
-    const dataFim = document.querySelector("#dataFim").value.trim();
-    const radios = document.querySelectorAll('[name="opcao"]');
-    var mesTempMed = null;
+    try {
+        const dataInicio = document.querySelector("#dataInicio").value.trim();
+        const dataFim = document.querySelector("#dataFim").value.trim();
+        const radios = document.querySelectorAll('[name="opcao"]');
+        var mesTempMed = null;
 
-    radios.forEach(opcao =>{
-        if(opcao.checked){
-            mesTempMed = opcao.value;
-        }
-    });
-    
+        radios.forEach(opcao =>{
+            if(opcao.checked){
+                mesTempMed = opcao.value;
+            }
+        });
+    } catch (erro) {
+        alert(`Erro na captura de valores da função pegarValorInput: ${erro}`);
+    }
     //_________________ Cria nova Section" __________________    
 
     //Apaga a section se ela já existir
-    var issecaoDados = document.querySelector('#secaoDados');
-    if(issecaoDados) {
-        console.log(issecaoDados);
-        document.querySelector('#secaoDados').remove();
-        console.log(`Apagado: ${document.querySelector('#secaoDados')}`);
+    try {
+        var issecaoDados = document.querySelector('#secaoDados');
+        if(issecaoDados) {
+            console.log(issecaoDados);
+            document.querySelector('#secaoDados').remove();
+            console.log(`Apagado: ${document.querySelector('#secaoDados')}`);
+        };
+        
+        var main = document.querySelector("main");
+        var secaoDados = document.createElement('section');
+        secaoDados.id = "secaoDados";    
+        main.appendChild(secaoDados);
+    } catch (erro) {
+        alert(`Erro na criação da section secaoDados na função pegarValorInput: ${erro}`);
     };
-    
-    var main = document.querySelector("main");
-    var secaoDados = document.createElement('section');
-    secaoDados.id = "secaoDados";    
-    main.appendChild(secaoDados);
 
     //_________________ Testa criação de parágrafos _________________
+    try {
+        let dados = [1,2,3,4,5,6,7];
 
-    let dados = [1,2,3,4,5,6,7];
+        dados.forEach(dado => {
+            var paragrafo = document.createElement('p');
+            paragrafo.classList.add("dados"); 
+            paragrafo.textContent = `Novo conteúdo: ${dado}`
+            secaoDados.appendChild(paragrafo);
+        });
 
-    dados.forEach(dado => {
-        var paragrafo = document.createElement('p');
-        paragrafo.classList.add("dados"); 
-        paragrafo.textContent = `Novo conteúdo: ${dado}`
-        secaoDados.appendChild(paragrafo);
-    });
-
-    console.log(`Data Inicio: ${dataInicio}; Data Fim: ${dataFim}; Mestempmed: ${mesTempMed}`);
-}
+        console.log(`Data Inicio: ${dataInicio}; Data Fim: ${dataFim}; Mestempmed: ${mesTempMed}`);
+    } catch (erro) {
+        alert(`Erro na criação de parágrafo na função pegarValorInput: ${erro}`);
+    };
+};
 
 //____________________ Verifica os campos ____________________
 
