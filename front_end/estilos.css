@@ -1,11 +1,10 @@
 
 
-
 /* __________________ Body __________________ */
 
 h1, h2, h3, h4 {
     color:cornflowerblue;
-    -webkit-text-stroke: 0.2px rgb(75, 73, 73);
+    /*-webkit-text-stroke: 0.5px rgb(55, 173, 173)*/
     margin: 0;
     line-height: 1.5;
 }
@@ -21,6 +20,8 @@ header h1 {
     border-top: 2px solid cornflowerblue;
     border-left: 2px solid cornflowerblue;
     border-right: 2px solid cornflowerblue;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
 }
 /* __________________ /Header/ __________________ */
 /* __________________ Main __________________ */
@@ -43,7 +44,6 @@ main p {
 
 .datas {
     color:cornflowerblue;
-    -webkit-text-stroke: 0.2px rgb(75, 73, 73);
 }
 
 .secaoDatas {        
@@ -53,6 +53,10 @@ main p {
 #botaoSubmit {
     font-family: "Arial", sans-serif;
     font-size: 14px;
+}
+
+.botaoSubmitEnable{
+    cursor: pointer;
 }
 
 #secaoDados{
@@ -65,7 +69,6 @@ main p {
 }
 
 #avisoData {
-    /* font-family: "Times New Roman", Times, serif; */
     margin: 0px;
     padding-top: 10px;
     text-decoration: underline;
@@ -80,6 +83,8 @@ footer {
     border-right: 2px solid cornflowerblue;
     border-bottom: 2px solid cornflowerblue;
     padding-bottom: 8px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 footer h3 {

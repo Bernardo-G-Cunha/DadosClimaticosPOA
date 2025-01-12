@@ -12,20 +12,18 @@ function pegarValorInput() {
         radios.forEach(opcao =>{
             if(opcao.checked){
                 mesTempMed = opcao.value;
-            }
+            };
         });
     } catch (erro) {
         alert(`Erro na captura de valores da função pegarValorInput: ${erro}`);
-    }
+    };
     //_________________ Cria nova Section" __________________    
 
     //Apaga a section se ela já existir
     try {
         var issecaoDados = document.querySelector('#secaoDados');
         if(issecaoDados) {
-            console.log(issecaoDados);
             document.querySelector('#secaoDados').remove();
-            console.log(`Apagado: ${document.querySelector('#secaoDados')}`);
         };
         
         var main = document.querySelector("main");
@@ -43,7 +41,7 @@ function pegarValorInput() {
         dados.forEach(dado => {
             var paragrafo = document.createElement('p');
             paragrafo.classList.add("dados"); 
-            paragrafo.textContent = `Novo conteúdo: ${dado}`
+            paragrafo.textContent = `Novo conteúdo: ${dado}`;
             secaoDados.appendChild(paragrafo);
         });
 
@@ -107,8 +105,15 @@ function verificarCampos() {
         };
 
         botaoSubmit.disabled = true;
-    }
-}
+    };
+
+    if (botaoSubmit.disabled == true) {
+        botaoSubmit.classList.replace('botaoSubmitEnable', 'botaoSubmitDisable');
+    } else {
+        botaoSubmit.classList.replace('botaoSubmitDisable', 'botaoSubmitEnable');
+    };
+
+};
 
 //____________________ Fuções para alterar underline ____________________
 
